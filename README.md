@@ -68,9 +68,10 @@ if(validator.failed()) {
 ## Methods
 
 ``` javascript
-pass.failed() // BOOL
-pass.message() // first error message as string
-pass.allMessages() // array of error message strings
+pass.validate(rules, data) // returns this object
+pass.failed() // returns BOOL
+pass.message() // returns first error message as string
+pass.allMessages() // returns array of error message strings
 ```
 
 ## Contributions
