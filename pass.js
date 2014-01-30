@@ -149,23 +149,23 @@
                 break;
 
             case "min_length":
-                result = this._chain(value, test, param, "_integer", "_minLength");
+                result = this._minLength(value, test, param);
                 break;
 
             case "max_length":
-                result = this._chain(value, test, param, "_integer", "_maxLength");
+                result = this._maxLength(value, test, param);
                 break;
 
             case "exact_length":
-                result = this._chain(value, test, param, "_numeric", "_exactLength");
+                result = this._exactLength(value, test, param);
                 break;
 
             case "greater_than":
-                result = this._chain(value, test, param, "_decimal", "_greaterThan");
+                result = this._greaterThan(value, test, param);
                 break;
 
             case "less_than":
-                result = this._chain(value, test, param, "_decimal", "_lessThan");
+                result = this._lessThan(value, test, param);
                 break;
 
             case "alpha":
@@ -231,24 +231,6 @@
      * Validation tests
      * - - - - - - - - -
      */
-
-    // pass multiple rules into this but save first 3 [0,1,2] params for rule data
-    this._chain = function(){
-        var master = true;
-        
-        for (var i = 3; i < arguments.length; i++) {
-            if(master === true) {
-                var fn = this[arguments[i]];
-                if(typeof fn === 'function') {
-                    master = fn(arguments[0],arguments[1],arguments[2]);
-                } else {
-                    _throwIncorrectChainFunction(fn);
-                }
-            }
-        };
-
-        return master;
-    }
 
     this._required = function(value, test){
         return (value !== null && value !== '');
