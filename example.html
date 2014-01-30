@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Browser Example</title>
+ 
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <script src="pass.js"></script>
+  <script type="text/javascript">
+  	var rules,data,validator;
+
+	var first_name = "Billy";
+	var last_name = "Jones";
+	var email = "billyjones26gmail.com";
+	var url = "http://theninthnode.com";
+	var password = "123";
+
+	rules = [
+	    ["first_name", "required", "first name"],
+	    ["last_name", "required", "last name"],
+	    ["email", "required,valid_email"],
+	    ["url", "valid_url"],
+	    ["password", "required,min_length:5"]
+	];
+
+	data = {
+	    first_name: first_name, 
+	    last_name: last_name,   
+	    email: email,   
+	    url: url,   
+	    password: password
+	};
+
+	validator = pass.validate(rules, data);
+
+	if(validator.failed()) {
+	    alert(validator.message()); // first message
+	    console.log(validator.allMessages()); // all messages
+	} else {
+		alert('Valid!');
+	}
+  </script>
+</body>
+</html>
