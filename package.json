@@ -1,0 +1,22 @@
+{
+  "name": "pass.js",
+  "version": "0.0.0",
+  "description": "Javascript validation module. Runs from command line or web, doesn't need a form.",
+  "main": "pass.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theninthnode/pass.js.git"
+  },
+  "keywords": [
+    "validation"
+  ],
+  "author": "Billy Jones",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theninthnode/pass.js/issues"
+  },
+  "homepage": "https://github.com/theninthnode/pass.js"
+}
