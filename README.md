@@ -1,7 +1,7 @@
 pass.js
 =======
 
-Javascript validation module. Runs from server or web, doesn't need form.
+Javascript validation module. Runs from server or web, doesn't need a form.
 
 **PLEASE NOTE. This project is still early stage. Tests are coming...**
 
@@ -42,8 +42,33 @@ if(validator.failed()) {
 }
 ```
 
+## Available Rules
+
+* required
+* matches
+* valid_email
+* min_length
+* max_length
+* exact_length
+* greater_than
+* less_than
+* alpha
+* alpha_numeric
+* alpha_dash
+* numeric
+* integer
+* decimal
+* is_natural
+* is_natural_no_zero
+* valid_ip
+* valid_base64
+* valid_credit_card
+* valid_url
+
 ## Contributions
 
 Thanks to validate.js for the regex's and messages.
 
-Inspired by Laravel.
+Inspired by Laravel's validator class.
+
+Trim function - http://blog.stevenlevithan.com/archives/faster-trim-javascript
