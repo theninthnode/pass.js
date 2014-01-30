@@ -1,6 +1,6 @@
 {
   "name": "pass.js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Javascript validation module. Runs from command line or web, doesn't need a form.",
   "main": "pass.js",
   "scripts": {
