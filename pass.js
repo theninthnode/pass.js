@@ -80,7 +80,7 @@
 
             var field, tests, param, message;
 
-            field = rules[i][0];
+            field = rules[i][0].trim();
             tests = rules[i][1].split(','); // split into an array of tests
 
             if(typeof data[field] === 'undefined')
@@ -89,8 +89,8 @@
             // process each test
             tests.forEach(function(test){
                 testSplit = test.split(':'); // split into an array for using param
-                test = testSplit[0];
-                param = testSplit[1];
+                test = testSplit[0].trim();
+                param = testSplit[1] ? testSplit[1].trim() : testSplit[1];
 
                 valid = _test(data[field], test, param);
                 
@@ -222,6 +222,9 @@
 
         return result;
     };
+
+    // http://blog.stevenlevithan.com/archives/faster-trim-javascript
+    String.prototype.trim = String.prototype.trim || function trim() { return this.replace(/^\s\s*/, '').replace(/\s\s*$/, ''); };
 
     /**
      * - - - - - - - - - 
