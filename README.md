@@ -5,6 +5,16 @@ Javascript validation module. Runs from server or web, doesn't need a form.
 
 **PLEASE NOTE. This project is still early stage. Tests are coming...**
 
+## Installation
+
+You can install this module manually by just saving pass.js somewhere in your project and using ```require``` or ```<script>``` to pull it in.
+
+Installing via npm:
+
+```
+npm install pass.js
+```
+
 ## Usage
 
 ``` javascript
@@ -19,7 +29,7 @@ var url = "http://theninthnode.com";
 var password = "123";
 
 rules = [
-	["first_name", "required", "first name"],
+	["first_name", "required", "first name"], // var name, rules, label for error message (defaults to var name)
 	["last_name", "required", "last name"],
 	["email", "required,valid_email"],
 	["url", "valid_url"],
@@ -37,8 +47,7 @@ data = {
 validator = pass.validate(rules, data);
 
 if(validator.failed()) {
-	alert(validator.message());
-	return false;
+	console.log(validator.message());
 }
 ```
 
