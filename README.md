@@ -65,6 +65,14 @@ if(validator.failed()) {
 * valid_credit_card
 * valid_url
 
+## Methods
+
+``` javascript
+pass.failed() // BOOL
+pass.message() // first error message as string
+pass.allMessages() // array of error message strings
+```
+
 ## Contributions
 
 Thanks to validate.js for the regex's and messages.
