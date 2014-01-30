@@ -88,7 +88,7 @@
 
             // process each test
             tests.forEach(function(test){
-                testSplit = test.split(':'); // split into an array for using param
+                testSplit = test.trim().split(':'); // split into an array for using param
                 test = testSplit[0].trim();
                 param = testSplit[1] ? testSplit[1].trim() : testSplit[1];
 
