@@ -18,7 +18,7 @@ npm install pass.js
 ## Usage
 
 ``` javascript
-require('pass');
+var pass = require('pass.js');
 
 var rules,data,validator;
 
