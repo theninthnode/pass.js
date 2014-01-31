@@ -3,7 +3,7 @@ pass.js
 
 Javascript validation module. Runs from server or web, doesn't need a form.
 
-**PLEASE NOTE. This project is still early stage. Tests are coming...**
+Requires ```mocha``` and ```chai``` for running tests.
 
 ## Installation
 
