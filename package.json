@@ -4,11 +4,15 @@
   "description": "Javascript validation module. Runs from command line or web, doesn't need a form.",
   "main": "pass.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/theninthnode/pass.js.git"
+  },
+  "dependencies": {
+    "mocha": "1.17.1",
+    "chai": "1.9.0"
   },
   "keywords": [
     "validation"
