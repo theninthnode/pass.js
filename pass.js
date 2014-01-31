@@ -262,7 +262,7 @@
     };
 
     this._lessThan = function(value, test, size){
-        return (value === '' ? true : (parseFloat(value) > parseFloat(size)));
+        return (value === '' ? true : (parseFloat(value) < parseFloat(size)));
     };
 
     this._alpha = function(value, test) {
