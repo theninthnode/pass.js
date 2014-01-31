@@ -8,7 +8,7 @@
 (function() {
 
     var pass = {};
-    var root = this, errors, valid = false;
+    var root = this, data, errors, valid = false;
 
     var messages = {
         required: 'The %s field is required.',
@@ -65,8 +65,9 @@
      * @return object this
      */
 
-    pass.validate = function(rules, data){
+    pass.validate = function(rules, _data){
 
+        data = _data;
         _checkValidData(data);
 
         errors = []; // ensure empty error array
