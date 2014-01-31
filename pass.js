@@ -77,7 +77,7 @@
 
             // rule must be at least length: 2
             if(rules[i].length < 2)
-                 _throwIncorrectRuleFormat();
+                _throwException('Incorrect validation rule format.');
 
             var field, tests, param, message;
 
@@ -85,7 +85,7 @@
             tests = rules[i][1].split(','); // split into an array of tests
 
             if(typeof data[field] === 'undefined')
-                _throwMissingData(field);
+                _throwException('Missing property: ' + field);
 
             // process each test
             tests.forEach(function(test){
@@ -140,7 +140,7 @@
 
             case "matches":
                 if(typeof data[param] === 'undefined')
-                    _throwMatchVariableNotFound(param);
+                    _throwException('Match variable not found: ' + param);
 
                 result = this._matches(value, test, data[param]);
                 break;
@@ -218,7 +218,7 @@
                 break;
 
             default:
-                _throwUnknownRule(test);
+                _throwException('Unknown validation rule: ' + test);
         }
 
         return result;
@@ -335,34 +335,6 @@
      * Expceptions for incorrect usage
      * - - - - - - - - - - - - - - - - 
      */
-
-    var _throwMissingParameter = function(field){
-        _throwException('Missing parameter for: ' + field);
-    };
-
-    var _throwIncorrectParameter = function(param){
-        _throwException('Incorrect parameter: ' + param);
-    };
-
-    var _throwMissingData = function(variable){
-        _throwException('Missing property: ' + variable);
-    };
-
-    var _throwUnknownRule = function(rule){
-        _throwException('Unknown validation rule: ' + rule);
-    };
-
-    var _throwIncorrectRuleFormat = function(){
-        _throwException('Incorrect validation rule format.');
-    };
-
-    var _throwIncorrectChainFunction = function(chain){
-        _throwException('Incorrect chain function: ' + chain);
-    };
-
-    var _throwMatchVariableNotFound = function(variable){
-        _throwException('Match variable not found: ' + variable);
-    };
 
     var _checkValidData = function(data) {
         if(typeof data !== 'object')
