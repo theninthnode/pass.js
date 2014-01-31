@@ -309,12 +309,12 @@
         return (value === '' ? true : (urlRegex.test(value)));
     };
 
-    this._validCreditCard = function(field){
+    this._validCreditCard = function(value){
         // Luhn Check Code from https://gist.github.com/4075533
 
         // The Luhn Algorithm. It's so pretty.
         var nCheck = 0, nDigit = 0, bEven = false;
-        var strippedField = value.replace(/\D/g, "");
+        var strippedField = value.toString().replace(/\D/g, "");
 
         for (var n = strippedField.length - 1; n >= 0; n--) {
             var cDigit = strippedField.charAt(n);
